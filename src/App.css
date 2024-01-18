@@ -1,0 +1,80 @@
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  height: 100vh;
+  flex-direction: row;
+  align-content: center;
+  align-items: flex-end;
+}
+
+.primeiro,
+.segundo,
+.terceiro {
+  position: relative;
+  width: 474px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball {
+  height: 30vh;
+}
+
+.bulbasaruOut,
+.squirtleOut,
+.charmanderOut {
+  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    top: 50%;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.ballopen:hover {
+  height: 40vh;
+  animation: shake 1s ease-in-out;
+}
+
+.ballopen {
+  height: 40vh;
+}
+
+.bulbasaruOut.showBulbasaurOut,
+.squirtleOut.showSquirtleOut,
+.charmanderOut.showCharmanderOut {
+  opacity: 1;
+  animation: slideIn 1s ease;
+}
